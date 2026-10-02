@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MotoRider Store - Productos</title>
+    <!-- Requisito 5.g: Estilos CSS definidos en <style> -->
+    <style>
+        * { box-sizing: border-box; }
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            margin: 0; 
+            padding: 20px; 
+            color: #ffffff; 
+            background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.75)), 
+                        url('https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?q=80&w=1920&auto=format&fit=crop') no-repeat center center fixed;
+            background-size: cover; 
+            min-height: 100vh;
+        }
+        
+        header {
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center;
+            background-color: rgba(15, 15, 20, 0.45); 
+            padding: 15px 30px;
+            border-radius: 10px; 
+            border: 1px solid rgba(255, 69, 0, 0.4); 
+            margin-bottom: 25px;
+            backdrop-filter: blur(8px);
+        }
+        
+        /* Requisito 5.c: Títulos H1 a H5 */
+        h1 { color: #ff4500; margin: 0; font-size: 2em; text-shadow: 2px 2px 4px rgba(0,0,0,0.8); }
+        h2 { color: #ff4500; font-size: 1.7em; margin-bottom: 10px; text-shadow: 2px 2px 4px rgba(0,0,0,0.8); }
+        h3 { color: #ffffff; font-size: 1.15em; margin: 8px 0 3px 0; }
+        h4 { color: #00ff88; font-size: 1em; margin: 5px 0; }
+        h5 { color: #ddd; font-size: 0.85em; margin: 3px 0; }
+
+        /* Requisito 4: Enlace exclusivo para volver a la página principal */
+        nav a { 
+            color: #ffffff; 
+            text-decoration: none; 
+            font-weight: bold; 
+            font-size: 1.05em;
+            background-color: rgba(255, 69, 0, 0.85);
+            padding: 8px 18px;
+            border-radius: 20px;
+            transition: background 0.3s;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+        }
+        nav a:hover { background-color: #ff4500; }
+
+        .encabezado-seccion {
+            background: rgba(15, 15, 20, 0.4); 
+            padding: 25px; 
+            border-radius: 12px;
+            text-align: center; 
+            backdrop-filter: blur(8px); 
+            border: 1px solid rgba(255, 69, 0, 0.3); 
+            margin-bottom: 30px;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        }
+
+        /* Requisito 5.e: Párrafos con formato explícito de fuente, color y tamaño */
+        p.descripcion { 
+            font-family: 'Segoe UI', sans-serif; 
+            font-size: 1.15em;                  
+            color: #ffffff;                      
+            max-width: 850px; 
+            margin: 15px auto; 
+            line-height: 1.6; 
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.9);
+        }
+
+        /* Requisito 5.f: Estructura de Tabla */
+        table.catalogo-grid {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+        }
+
+        .contenedor-tarjetas {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 25px;
+        }
+
+        .tarjeta-producto {
+            background: rgba(15, 15, 20, 0.5);
+            border: 1px solid rgba(255, 69, 0, 0.3);
+            border-radius: 12px;
+            padding: 15px;
+            width: 290px;
+            text-align: center;
+            backdrop-filter: blur(6px);
+            transition: transform 0.3s, border-color 0.3s;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .tarjeta-producto:hover {
+            transform: translateY(-5px);
+            border-color: #ff4500;
+        }
+
+        .tarjeta-producto img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .tarjeta-producto .precio {
+            color: #00ff88;
+            font-size: 1.4em;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        .tarjeta-producto .estado {
+            background-color: rgba(255, 69, 0, 0.2);
+            color: #ff4500;
+            padding: 6px 12px;
+            border-radius: 15px;
+            font-size: 0.85em;
+            font-weight: bold;
+            display: inline-block;
+        }
+
+        footer { text-align: center; margin-top: 40px; padding: 15px; color: #aaa; font-size: 0.9em; text-shadow: 1px 1px 2px black; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <!-- Requisito 5.c: Título H1 -->
+        <h1>MotoRider Store</h1>
+        <nav>
+            <!-- Requisito 4: Enlace exclusivo de retorno -->
+            <a href="index.html">&larr; Volver al Inicio</a>
+        </nav>
+    </header>
+
+    <div class="encabezado-seccion">
+        <!-- Requisito 5.c: Títulos H2, H3, H4, H5 -->
+        <h2>Catálogo de Productos y Repuestos</h2>
+        <h3>Indumentaria, Lubricantes y Protección</h3>
+        <h4>Seguridad e Insumos Garantizados</h4>
+        <h5> Catalogo actualizado para el </sup>  2026</h5>
+
+        <!-- Requisito 5.d y 5.e: Párrafos con formato b, i, u, s, sub, sup -->
+        <p class="descripcion">
+            En <b>MotoRider Store</b> nos especializamos en la <i>protección integral</i> de tu vehículo. 
+            Ofrecemos <u>marcas reconocidas</u>, precios  <b>cómodos y bajos</b> con ofertas de fábrica, 
+            lubricantes con fórmulas H<sub>2</sub>O/Sintético y cascos de nivel 1<sup>st</sup> en seguridad.
+        </p>
+    </div>
+
+    <!-- Requisito 5.f: Estructura de Tabla -->
+    <table class="catalogo-grid">
+        <tbody>
+            <tr>
+                <td>
+                    <div class="contenedor-tarjetas">
+                        
+                        <!-- Producto 1: Aceite Liqui Moly (Servidor Remoto) -->
+                        <div class="tarjeta-producto">
+                            <img src="https://repuestosvolkswagen.com.co/741/aceite-liqui-moly-5w30-aa.jpg" alt="Aceite Sintético Liqui Moly">
+                            <h3>Aceite Sintético Liqui Moly 5W30 (Servidor Remoto)</h3>
+                            <h5>Mantenimiento y Motor</h5>
+                            <div class="precio">$65.000 COP</div>
+                            <div><span class="estado">Disponible</span></div>
+                        </div>
+
+                        <!-- Producto 2: Sliders Suzuki (Servidor Remoto) -->
+                        <div class="tarjeta-producto">
+                            <img src="https://rinometal.com.co/wp-content/uploads/Sliders-de-motor-Suzuki-GSX-R-150.jpg" alt="Sliders de Motor">
+                            <h3>Sliders Anti-caída en Aluminio (Servidor Remoto)</h3>
+                            <h5>Accesorios de Protección</h5>
+                            <div class="precio">$120.000 COP</div>
+                            <div><span class="estado">Disponible</span></div>
+                        </div>
+
+                        <!-- Producto 3: Refrigerante Liqui Moly (Servidor Remoto) -->
+                        <div class="tarjeta-producto">
+                            <img src="https://liqui-moly.com.co/wp-content/uploads/2026/06/csm_2026-06-10_Website_Teaser_Coolant_c7734f4138.jpg" alt="Refrigerante Coolant">
+                            <h3>Refrigerante Liqui Moly H<sub>2</sub>O (Servidor Remoto)</h3>
+                            <h5>Protección Clima/Motor</h5>
+                            <div class="precio">$45.000 COP</div>
+                            <div><span class="estado">Disponible</span></div>
+                        </div>
+
+                        <!-- Producto 4: Casco Integral (Servidor Local) -->
+                        <div class="tarjeta-producto">
+                            <img src="imagenes/cascos.jpg" alt="Casco Certificado">
+                            <h3>Casco Integral Certificado (Servidor Local)</h3>
+                            <h5>Protección DOT / ECE</h5>
+                            <div class="precio">$280.000 COP</div>
+                            <div><span class="estado">Disponible</span></div>
+                        </div>
+
+                        <!-- Producto 5: Chaqueta con Protecciones (Servidor Local) -->
+                        <div class="tarjeta-producto">
+                            <img src="imagenes/chaquetas.jpg" alt="Chaqueta de Protección">
+                            <h3>Chaqueta de Protecciones Nivel 2 (Servidor Local)</h3>
+                            <h5>Indumentaria Térmica</h5>
+                            <div class="precio">$350.000 COP</div>
+                            <div><span class="estado">Pocas unidades</span></div>
+                        </div>
+
+                        <!-- Producto 6: Guantes de Cuero (Servidor Local) -->
+                        <div class="tarjeta-producto">
+                            <img src="imagenes/guantes.jpg" alt="Guantes de Cuero">
+                            <h3>Guantes de Cuero con Protecciones (Servidor Local)</h3>
+                            <h5>Indumentaria de Fibra</h5>
+                            <div class="precio">$85.000 COP</div>
+                            <div><span class="estado">Disponible</span></div>
+                        </div>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <footer>
+        <p>&copy; 2026 MotoRider Store - Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>
